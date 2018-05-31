@@ -25,9 +25,9 @@ namespace PG.Api.Controllers
 
         [Authorize]
         [Route("")]
-        public override IHttpActionResult Post([FromBody] NewSiteDto value)
+        public IHttpActionResult Post([FromBody] NewSiteDto value)
         {
-            return base.Post(value);
+            return base.Post(value, "GetSiteById");
         }
 
         [Authorize]

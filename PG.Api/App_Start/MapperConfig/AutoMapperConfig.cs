@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using System.Reflection;
 
 namespace PG.Api
 {
@@ -8,9 +9,7 @@ namespace PG.Api
         {
             Mapper.Initialize(config =>
             {
-                config.AddProfile<FacilityMappingProfile>();
-                config.AddProfile<SiteMappingProfile>();
-                config.AddProfile<UserProfileMappingProfile>();
+                config.AddProfiles(Assembly.GetExecutingAssembly());
             });
         }
     }

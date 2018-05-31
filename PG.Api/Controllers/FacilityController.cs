@@ -20,9 +20,9 @@ namespace PG.Api.Controllers
 
         [Authorize]
         [Route("")]
-        public override IHttpActionResult Post([FromBody] NewFacilityDto value)
+        public IHttpActionResult Post([FromBody] NewFacilityDto value)
         {
-            return base.Post(value);
+            return base.Post(value, "GetFacilityById");
         }
 
         [Authorize]

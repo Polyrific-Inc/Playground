@@ -41,7 +41,7 @@ namespace PG.Api.Controllers
             return Ok(item);
         }
         
-        public virtual IHttpActionResult Post([FromBody]TNewDto value)
+        public virtual IHttpActionResult Post([FromBody]TNewDto value, string createdAtRouteName)
         {
             var newEntity = value.ToEntity();
             var id = Svc.Create(newEntity);
@@ -49,7 +49,7 @@ namespace PG.Api.Controllers
             var item = new TDto();
             item.LoadFromEntity(newEntity);
             
-            return CreatedAtRoute("GetById", new {id}, item);
+            return CreatedAtRoute(createdAtRouteName, new {id}, item);
         }
         
         public virtual IHttpActionResult Put(int id, [FromBody]TEditDto value)
