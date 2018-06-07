@@ -1,12 +1,11 @@
-﻿using PG.Api.DtoModels;
+﻿using System.Web.Http;
+using PG.Api.Domains.Base;
 using PG.BLL;
-using PG.Model;
-using System.Web.Http;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.Facility
 {
     [RoutePrefix("Facility")]
-    public class FacilityController : BaseController<NewFacilityDto, EditFacilityDto, FacilityDto, Facility, IFacilityService>
+    public class FacilityController : BaseController<NewFacilityDto, EditFacilityDto, FacilityDto, Model.Facility, IFacilityService>
     {
         public FacilityController(IFacilityService service) : base(service)
         {

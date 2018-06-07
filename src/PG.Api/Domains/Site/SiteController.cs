@@ -1,15 +1,15 @@
-﻿using PG.Api.DtoModels;
-using PG.BLL;
-using PG.Common;
-using PG.Model;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Web.Http;
+using PG.Api.Domains.Base;
+using PG.Api.Domains.Facility;
+using PG.BLL;
+using PG.Common;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.Site
 {
     [RoutePrefix("Site")]
-    public class SiteController : BaseController<NewSiteDto, EditSiteDto, SiteDto, Site, ISiteService>
+    public class SiteController : BaseController<NewSiteDto, EditSiteDto, SiteDto, Model.Site, ISiteService>
     {
         public SiteController(ISiteService siteService)
             : base(siteService)

@@ -165,6 +165,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationSetting.cs" />
+    <Compile Include="App_Start\CustomRazorViewEngine.cs" />
     <Compile Include="App_Start\DIConfig\AutofacConfig.cs" />
     <Compile Include="App_Start\MapperConfig\AutoMapperConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
@@ -204,18 +205,23 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\BaseController.cs" />
-    <Compile Include="Controllers\FacilityController.cs" />
-    <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\SiteController.cs" />
-    <Compile Include="Controllers\UserProfileController.cs" />
-    <Compile Include="DtoModels\BaseDto.cs" />
-    <Compile Include="DtoModels\FacilityDto.cs" />
-    <Compile Include="DtoModels\RegisterUserDto.cs" />
-    <Compile Include="DtoModels\ResetPasswordDto.cs" />
-    <Compile Include="DtoModels\SiteDto.cs" />
-    <Compile Include="DtoModels\UserProfileDto.cs" />
+    <Compile Include="Domains\Account\AccountController.cs" />
+    <Compile Include="Domains\Base\BaseController.cs" />
+    <Compile Include="Domains\Facility\EditFacilityDto.cs" />
+    <Compile Include="Domains\Facility\FacilityController.cs" />
+    <Compile Include="Domains\Facility\NewFacilityDto.cs" />
+    <Compile Include="Domains\Home\HomeController.cs" />
+    <Compile Include="Domains\Site\EditSiteDto.cs" />
+    <Compile Include="Domains\Site\NewSiteDto.cs" />
+    <Compile Include="Domains\Site\SiteController.cs" />
+    <Compile Include="Domains\UserProfile\EditUserProfileDto.cs" />
+    <Compile Include="Domains\UserProfile\UserProfileController.cs" />
+    <Compile Include="Domains\Base\BaseDto.cs" />
+    <Compile Include="Domains\Facility\FacilityDto.cs" />
+    <Compile Include="Domains\Account\RegisterUserDto.cs" />
+    <Compile Include="Domains\Account\ResetPasswordDto.cs" />
+    <Compile Include="Domains\Site\SiteDto.cs" />
+    <Compile Include="Domains\UserProfile\UserProfileDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -283,11 +289,11 @@
       <DependentUpon>Web.config</DependentUpon>
     </Content>
     <Content Include="Content\Site.css" />
-    <Content Include="Views\Web.config" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Domains\Web.config" />
+    <Content Include="Domains\_ViewStart.cshtml" />
+    <Content Include="Domains\Home\Index.cshtml" />
+    <Content Include="Domains\Base\Views\Error.cshtml" />
+    <Content Include="Domains\Base\Views\_Layout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

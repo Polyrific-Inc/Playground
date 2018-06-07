@@ -14,6 +14,10 @@ namespace PG.Api
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
+
+            ViewEngines.Engines.Clear();
+            ViewEngines.Engines.Add(new CustomRazorViewEngine());
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

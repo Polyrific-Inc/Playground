@@ -1,18 +1,10 @@
-﻿using PG.Model;
-
-namespace PG.Api.DtoModels
+﻿namespace PG.Api.Domains.UserProfile
 {
-    public class EditUserProfileDto : BaseDto<UserProfile>
-    {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-    }
-
     public class UserProfileDto : EditUserProfileDto
     {
         public string Email { get; set; }
 
-        public override void LoadFromEntity(UserProfile entity)
+        public override void LoadFromEntity(Model.UserProfile entity)
         {
             base.LoadFromEntity(entity);
 

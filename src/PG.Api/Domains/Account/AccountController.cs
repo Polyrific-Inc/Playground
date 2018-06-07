@@ -1,17 +1,16 @@
-﻿using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using PG.Api.DtoModels;
-using PG.Api.Identity;
-using PG.BLL;
-using PG.Model;
-using System.Net;
+﻿using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Http;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using PG.Api.Identity;
+using PG.BLL;
+using PG.Model;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.Account
 {
     [RoutePrefix("Account")]
     public class AccountController : ApiController
@@ -56,7 +55,7 @@ namespace PG.Api.Controllers
             var result = await UserManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                var profile = new UserProfile
+                var profile = new Model.UserProfile
                 {
                     AppUser = user,
                     FirstName = model.FirstName,

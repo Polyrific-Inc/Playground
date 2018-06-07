@@ -1,12 +1,11 @@
-﻿using PG.Api.DtoModels;
+﻿using System.Web.Http;
+using PG.Api.Domains.Base;
 using PG.BLL;
-using PG.Model;
-using System.Web.Http;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.UserProfile
 {
     [RoutePrefix("UserProfile")]
-    public class UserProfileController : BaseController<UserProfileDto, EditUserProfileDto, UserProfileDto, UserProfile, IUserProfileService>
+    public class UserProfileController : BaseController<UserProfileDto, EditUserProfileDto, UserProfileDto, Model.UserProfile, IUserProfileService>
     {
         public UserProfileController(IUserProfileService service) : base(service)
         {

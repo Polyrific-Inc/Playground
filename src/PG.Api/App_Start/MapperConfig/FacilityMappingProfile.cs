@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
-using PG.Api.DtoModels;
 using PG.Model;
 using System.Data.Entity.Spatial;
+using PG.Api.Domains.Facility;
 
 namespace PG.Api
 {

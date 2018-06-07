@@ -1,11 +1,10 @@
-﻿using PG.Api.DtoModels;
+﻿using System.Net;
+using System.Web.Http;
 using PG.BLL;
 using PG.Common;
 using PG.Model;
-using System.Net;
-using System.Web.Http;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.Base
 {
     public abstract class BaseController<TNewDto, TEditDto, TDto, TEntity, TService> : ApiController
         where TEntity : BaseModel, new()

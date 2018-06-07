@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using PG.Model;
 
-namespace PG.Api.DtoModels
+namespace PG.Api.Domains.Base
 {
     public abstract class BaseNewDto<TEntity>
         where TEntity : BaseModel, new()

@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace PG.Api.Controllers
+namespace PG.Api.Domains.Home
 {
     public class HomeController : Controller
     {

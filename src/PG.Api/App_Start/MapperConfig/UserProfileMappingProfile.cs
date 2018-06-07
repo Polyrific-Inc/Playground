@@ -1,5 +1,5 @@
 ﻿using AutoMapper;
-using PG.Api.DtoModels;
+using PG.Api.Domains.UserProfile;
 using PG.Model;
 
 namespace PG.Api

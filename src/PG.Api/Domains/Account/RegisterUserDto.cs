@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace PG.Api.DtoModels
+namespace PG.Api.Domains.Account
 {
     public class RegisterUserDto
     {
