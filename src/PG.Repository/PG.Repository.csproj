@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77F216BC-D398-4665-A637-5749061D7693}</ProjectGuid>
+    <ProjectGuid>{39394A46-6303-4B9D-B660-0635293CBD06}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>PG.Repository</RootNamespace>
@@ -31,17 +31,17 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="StackExchange.Redis, Version=1.2.6.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
+      <HintPath>..\..\packages\StackExchange.Redis.1.2.6\lib\net46\StackExchange.Redis.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -69,26 +69,26 @@
     <Compile Include="UserProfileRepository.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\PG.Common\PG.Common.csproj">
-      <Project>{FBE1C986-3670-49F2-91AD-086ADC55BFA5}</Project>
-      <Name>PG.Common</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PG.DataAccess\PG.DataAccess.csproj">
-      <Project>{6539a16c-1a64-4047-8e16-d238dfd91b3c}</Project>
-      <Name>PG.DataAccess</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PG.Model\PG.Model.csproj">
-      <Project>{540E378A-E9C6-44EA-BD5A-038FA6B3376E}</Project>
-      <Name>PG.Model</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PG.Common\PG.Common.csproj">
+      <Project>{af70711b-cf3c-4680-b231-1f71a43c0e4f}</Project>
+      <Name>PG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PG.DataAccess\PG.DataAccess.csproj">
+      <Project>{b97c087b-622f-4632-a99d-3874b5c2019c}</Project>
+      <Name>PG.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PG.Model\PG.Model.csproj">
+      <Project>{4c8b0e90-80b4-4a71-944c-50a5be5f537f}</Project>
+      <Name>PG.Model</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

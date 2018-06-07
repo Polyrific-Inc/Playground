@@ -122,22 +122,26 @@ namespace PG.Api.Controllers
             return await SetActiveStatus(userId, false);
         }
 
-        [Route("{email}/ResetPasswordUrl"), HttpGet]
-        public async Task<IHttpActionResult> GetResetPasswordUrl(string email)
+        [Authorize]
+        [Route("{userId}/ResetPasswordUrl"), HttpGet]
+        public async Task<IHttpActionResult> GetResetPasswordUrl(int userId)
         {
-            var user = await UserManager.FindByEmailAsync(email);
-            var userId = user?.Id ?? 1;
-
-            var code = await UserManager.GeneratePasswordResetTokenAsync(userId);
-
             var url = Url.Link("ResetPassword", null);
-            var data = new ResetPasswordDto
+            ResetPasswordDto data = null;
+
+            var user = await UserManager.FindByIdAsync(userId);
+            if (user != null)
             {
-                Email = email,
-                Code = HttpUtility.UrlEncode(code),
-                Password = "new-password",
-                ConfirmPassword = "confirm-password"
-            };
+                var code = await UserManager.GeneratePasswordResetTokenAsync(userId);
+
+                data = new ResetPasswordDto
+                {
+                    Email = user.Email,
+                    Code = HttpUtility.UrlEncode(code),
+                    Password = "[new-password]",
+                    ConfirmPassword = "[confirm-password]"
+                };
+            }
 
             return Ok(new {url, data});
         }

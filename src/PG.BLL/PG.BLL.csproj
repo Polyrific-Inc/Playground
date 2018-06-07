@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{540E378A-E9C6-44EA-BD5A-038FA6B3376E}</ProjectGuid>
+    <ProjectGuid>{5689519B-C735-4DDD-9CC1-59AF319B15D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PG.Model</RootNamespace>
-    <AssemblyName>PG.Model</AssemblyName>
+    <RootNamespace>PG.BLL</RootNamespace>
+    <AssemblyName>PG.BLL</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -30,19 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.Entity" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,20 +40,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Identity\ApplicationUser.cs" />
-    <Compile Include="BaseModel.cs" />
-    <Compile Include="Constants\SiteType.cs" />
-    <Compile Include="Facility.cs" />
-    <Compile Include="Identity\ApplicationUserClaim.cs" />
-    <Compile Include="Identity\ApplicationUserLogin.cs" />
-    <Compile Include="Identity\ApplicationUserRole.cs" />
+    <Compile Include="BaseService.cs" />
+    <Compile Include="FacilityService.cs" />
+    <Compile Include="IFacilityService.cs" />
+    <Compile Include="IService.cs" />
+    <Compile Include="ISiteService.cs" />
+    <Compile Include="IUserProfileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Site.cs" />
-    <Compile Include="UserProfile.cs" />
+    <Compile Include="SiteService.cs" />
+    <Compile Include="UserProfileService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
+    <None Include="app.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PG.Common\PG.Common.csproj">
+      <Project>{af70711b-cf3c-4680-b231-1f71a43c0e4f}</Project>
+      <Name>PG.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PG.Model\PG.Model.csproj">
+      <Project>{4c8b0e90-80b4-4a71-944c-50a5be5f537f}</Project>
+      <Name>PG.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PG.Repository\PG.Repository.csproj">
+      <Project>{39394a46-6303-4b9d-b660-0635293cbd06}</Project>
+      <Name>PG.Repository</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
